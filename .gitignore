@@ -1,0 +1,65 @@
+# Configuration files with sensitive data
+config/database.local.php
+
+# Utilities folder (should be deleted after setup)
+utilities/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Uploaded files (if you add file uploads)
+uploads/
+images/uploads/
+
+# Cache
+cache/
+tmp/
+
+# Environment files
+.env
+.env.local
+
+# Composer (if you add it later)
+vendor/
+composer.lock
+
+# Debug/diagnostic scripts (prevent future accumulation)
+check_*.php
+diagnose_*.php
+fix_*.php
+reproduce_*.php
+verify_*.php
+tmp_*.php
+migrate_*.php
+update_db_*.php
+
+# Stale output files
+*.txt
+!README.txt
+
+# API debug artifacts
+api/debug.log
+api/diag_*.txt
+api/out.txt
+api/test_*.php
+api/diagnose_*.php
+api/db_describe_*.php

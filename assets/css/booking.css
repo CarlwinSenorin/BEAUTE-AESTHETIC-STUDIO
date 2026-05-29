@@ -1,0 +1,782 @@
+/* Booking Page Styles */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.booking-section {
+    padding: 40px 20px;
+    background: var(--light-color);
+    min-height: 70vh;
+}
+
+.booking-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+}
+
+.booking-step {
+    display: none;
+}
+
+.booking-step.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.booking-step h2 {
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-description {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Service Selection Grouped */
+.services-selection-grouped {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-category-group-header {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.service-category-group-header h4 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.service-category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+/* Pax Selector */
+.pax-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+
+.pax-option {
+    cursor: pointer;
+}
+
+.pax-option input[type="radio"] {
+    display: none;
+}
+
+.pax-card {
+    background: #fafafa;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pax-option:hover .pax-card {
+    border-color: var(--primary-color);
+    background: #fff;
+}
+
+.pax-option input[type="radio"]:checked+.pax-card {
+    background: var(--accent-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(212, 165, 116, 0.15);
+}
+
+.pax-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.pax-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-checkbox {
+    display: block;
+    cursor: pointer;
+}
+
+.service-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.service-checkbox-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    transition: all 0.3s;
+    background: #fafafa;
+}
+
+.service-checkbox:hover .service-checkbox-content {
+    border-color: var(--primary-color);
+    background: #fff;
+}
+
+.service-checkbox input[type="checkbox"]:checked+.service-checkbox-content {
+    border-color: var(--primary-color);
+    background: var(--accent-color);
+    box-shadow: 0 4px 10px rgba(212, 165, 116, 0.15);
+}
+
+.service-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.service-duration {
+    color: #888;
+    margin: 0 1.5rem;
+    font-size: 0.9rem;
+}
+
+.service-price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Service Quantity Picker */
+.service-instance-controls {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.qty-control {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 2px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.qty-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: var(--light-color);
+    color: var(--dark-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.qty-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.qty-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.qty-val {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+/* Assignment Cards */
+.service-assignments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.assignment-card {
+    background: #fff;
+    border: 1px solid #eef0f2;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-left: 5px solid var(--primary-color);
+    animation: fadeIn 0.5s;
+}
+
+.assignment-card h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.assignment-card h3 i {
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.assignment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.assignment-section label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.assignment-section select,
+.assignment-section input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #edeff2;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.assignment-section select:focus,
+.assignment-section input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.assignment-time-slots {
+    grid-column: span 2;
+    margin-top: 1rem;
+}
+
+.assignment-time-slots .time-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.time-slot {
+    padding: 12px 15px;
+    border: 2px solid #edeff2;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fff;
+    font-weight: 600;
+    color: #555;
+}
+
+.time-slot:hover {
+    border-color: var(--primary-color);
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.time-slot.selected {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+.time-slot.disabled {
+    background: #f0f0f0;
+    color: #bbb;
+    border-color: #eee;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.time-slot.disabled:hover {
+    transform: none;
+    background: #f0f0f0;
+}
+
+.time-slots-summary {
+    background: #f8f9fa;
+    border: 2px dashed var(--primary-color);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.selected-time-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+}
+
+.selected-time-info i {
+    color: var(--success-color);
+    font-size: 1.2rem;
+}
+
+.btn-edit-time {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-edit-time:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Review & Confirm Styles */
+.booking-summary h3 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.booking-summary h3 i {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.summary-services-wrapper,
+.summary-info-section,
+.summary-pricing-section,
+.summary-extra-section {
+    margin-bottom: 2rem;
+}
+
+.summary-card,
+.summary-info-card,
+.pricing-summary-card {
+    background: #fff;
+    border: 1px solid #eef0f2;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card-header {
+    background: var(--accent-color);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-card-header h4 {
+    margin: 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-card-body,
+.summary-info-card,
+.pricing-summary-card {
+    padding: 1.5rem;
+}
+
+.summary-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.summary-detail:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #888;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-label i {
+    width: 16px;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.detail-value {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.status-pending {
+    color: var(--warning-color);
+    background: rgba(255, 193, 7, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.pricing-summary-card {
+    border-left: 5px solid var(--primary-color);
+}
+
+.summary-detail.discount .detail-value {
+    color: var(--danger-color);
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+.total-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.total-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+/* Step Buttons Fix */
+.step-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.btn-next {
+    min-width: 250px;
+}
+
+@media (max-width: 768px) {
+    .assignment-form {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .assignment-time-slots {
+        grid-column: span 1;
+    }
+
+    .booking-form {
+        padding: 1.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide obsolete styles */
+.category-selection,
+.category-badge-container,
+.staff-selection,
+.date-time-selection {
+    display: none;
+}
+
+/* ============================================
+   AI Suggested Time Slot
+   ============================================ */
+.time-slot.suggested {
+    border-color: #c9a227;
+    background: linear-gradient(135deg, #fff8e5, #fff3cc);
+    color: #7a5c00;
+    box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.35);
+    animation: pulseSuggested 2s ease-in-out infinite;
+    position: relative;
+}
+
+.time-slot.suggested::after {
+    content: '✦ AI';
+    position: absolute;
+    top: -8px;
+    right: 6px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #fff;
+    background: #c9a227;
+    padding: 1px 5px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulseSuggested {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px rgba(201, 162, 39, 0.15);
+    }
+}
+
+/* ============================================
+   AI Date Hint Banner
+   ============================================ */
+.ai-date-hint {
+    grid-column: span 2;
+    background: linear-gradient(90deg, #fff8e5, #fff3cc);
+    border: 1px solid #c9a227;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.88rem;
+    color: #7a5c00;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+    animation: fadeIn 0.4s;
+}
+
+.ai-date-hint i {
+    font-size: 1rem;
+    color: #c9a227;
+}
+
+/* ============================================
+   Per-Pax Review Groups (folder/box)
+   ============================================ */
+.summary-person-group {
+    border: 2px solid #eef0f2;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    animation: fadeIn 0.4s;
+}
+
+.person-group-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+
+.person-group-header i {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.summary-person-group .summary-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+.summary-person-group .summary-card:last-of-type {
+    border-bottom: none;
+}
+
+.person-group-subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.5rem;
+    background: #f8f9fa;
+    border-top: 2px solid var(--accent-color);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+}
+
+/* Summary card price badge */
+.summary-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-card-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(212, 165, 116, 0.12);
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* ============================================
+   Live Total Price Display (Step 1 Summary)
+   ============================================ */
+.total-price-display {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--accent-color);
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.total-price-display span {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+/* ============================================
+   Global Date Picker Styles
+   ============================================ */
+.date-selection-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+#globalDatePickerContainer {
+    width: 100%;
+    max-width: 400px;
+}
+
+#globalDateInput {
+    display: none;
+    /* Hide the literal input if using inline */
+}
+
+/* Customizing Flatpickr Theme to match Beaute Studio */
+.flatpickr-calendar.inline {
+    width: 100% !important;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef0f2;
+    border-radius: 15px;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.flatpickr-months .flatpickr-month {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+.flatpickr-current-month .flatpickr-monthValue {
+    font-weight: 700;
+}

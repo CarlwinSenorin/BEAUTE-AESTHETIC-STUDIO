@@ -1,0 +1,231 @@
+{
+    "categories": {
+        "Chatbot": {
+            "total": 20,
+            "correct": 20,
+            "tp": 20,
+            "tn": 380,
+            "fp": 0,
+            "fn": 0,
+            "k": 20,
+            "accuracy": 100,
+            "moe": 0
+        },
+        "Scheduling": {
+            "total": 1,
+            "correct": 1,
+            "tp": 1,
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "k": 2,
+            "accuracy": 100,
+            "moe": 0
+        },
+        "Segmentation": {
+            "total": 3,
+            "correct": 3,
+            "tp": 3,
+            "tn": 9,
+            "fp": 0,
+            "fn": 0,
+            "k": 4,
+            "accuracy": 100,
+            "moe": 0
+        }
+    },
+    "details": [
+        {
+            "category": "Chatbot",
+            "input": "Hello!",
+            "expected": "GREETING",
+            "actual": "GREETING",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "how can I book an appointment?",
+            "expected": "BOOKING",
+            "actual": "BOOKING",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "I want to see my scheduled bookings",
+            "expected": "VIEW_APPOINTMENTS",
+            "actual": "VIEW_APPOINTMENTS",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "cancel my appointment",
+            "expected": "CANCELLATION",
+            "actual": "CANCELLATION",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "can I reschedule my session?",
+            "expected": "RESCHEDULE",
+            "actual": "RESCHEDULE",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "where are you located?",
+            "expected": "LOCATION",
+            "actual": "LOCATION",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "how early should I arrive?",
+            "expected": "POLICIES_ARRIVAL",
+            "actual": "POLICIES_ARRIVAL",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "what are your payment methods?",
+            "expected": "POLICIES_PAYMENT",
+            "actual": "POLICIES_PAYMENT",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "when do you close?",
+            "expected": "BUSINESS_HOURS",
+            "actual": "BUSINESS_HOURS",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "tell me about the studio",
+            "expected": "ABOUT_US",
+            "actual": "ABOUT_US",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "who owns the place?",
+            "expected": "OWNER",
+            "actual": "OWNER",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "do you have any certified specialists?",
+            "expected": "STAFF",
+            "actual": "STAFF",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "are there any special packages?",
+            "expected": "PACKAGES",
+            "actual": "PACKAGES",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "show me all your services",
+            "expected": "SERVICES",
+            "actual": "SERVICES",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "nevermind go back",
+            "expected": "FLOW_CONTROL",
+            "actual": "FLOW_CONTROL",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "I want to leave feedback",
+            "expected": "FEEDBACK",
+            "actual": "FEEDBACK",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "how do I do this?",
+            "expected": "HELP",
+            "actual": "HELP",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "is there parking?",
+            "expected": "FAQ",
+            "actual": "FAQ",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "tell me about nail services",
+            "expected": "CATEGORY_INFO",
+            "actual": "CATEGORY_INFO",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Chatbot",
+            "input": "what is the meaning of life?",
+            "expected": "UNKNOWN",
+            "actual": "UNKNOWN",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Scheduling",
+            "input": "Peak hours prioritization",
+            "expected": "PASSED",
+            "actual": "PASSED",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Segmentation",
+            "input": "Frequent Spender",
+            "expected": "VIP",
+            "actual": "VIP",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Segmentation",
+            "input": "Returning Customer",
+            "expected": "LOYAL",
+            "actual": "LOYAL",
+            "correct": true,
+            "reason": ""
+        },
+        {
+            "category": "Segmentation",
+            "input": "Inactive Customer",
+            "expected": "DORMANT",
+            "actual": "DORMANT",
+            "correct": true,
+            "reason": ""
+        }
+    ]
+}

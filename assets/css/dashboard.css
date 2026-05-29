@@ -1,0 +1,403 @@
+/* Dashboard Premium Redesign - Beaute Aesthetic Studio */
+
+:root {
+    --dash-primary: #d4a574;
+    --dash-secondary: #8b6f47;
+    --dash-accent: #f5e6d3;
+    --dash-bg: #fdfaf7;
+    --dash-white: #ffffff;
+    --dash-text: #2d3436;
+    --dash-text-light: #636e72;
+    --dash-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    --dash-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
+    --dash-glass: rgba(255, 255, 255, 0.7);
+    --dash-success: #4cd137;
+    --dash-warning: #ffcc00;
+    --dash-danger: #ea4c89;
+    --dash-info: #00cec9;
+}
+
+.dashboard-section {
+    padding: 60px 0;
+    background: var(--dash-bg);
+    min-height: 85vh;
+    font-family: 'Outfit', sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--dash-text);
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.dashboard-subtitle {
+    color: var(--dash-text-light);
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* Statistics Grid */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--dash-white);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: var(--dash-shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(212, 165, 116, 0.05);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--dash-shadow-lg);
+    border-color: var(--dash-primary);
+}
+
+.stat-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon-total {
+    background: linear-gradient(135deg, #17a2b8 0%, #117a8b 100%);
+}
+
+.stat-icon-upcoming {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+}
+
+.stat-icon-completed {
+    background: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%);
+}
+
+.stat-icon-spent {
+    background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+}
+
+.stat-content h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--dash-text);
+    margin: 0;
+    line-height: 1;
+}
+
+.stat-content p {
+    color: var(--dash-text-light);
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Next Appointment Hero */
+.next-appointment-card {
+    background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+    color: white;
+    padding: 45px;
+    border-radius: 35px;
+    margin-bottom: 50px;
+    box-shadow: 0 25px 50px rgba(212, 165, 116, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.next-appointment-card::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.next-appointment-header h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.9;
+}
+
+.next-appointment-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.date-display {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 25px;
+    min-width: 140px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.date-day {
+    font-size: 48px;
+    font-weight: 900;
+    display: block;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.time-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.next-appointment-details h3 {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.status-badge {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Status Colors */
+.status-pending {
+    background: #feeaa1;
+    color: #856404;
+}
+
+.status-reserved {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-confirmed {
+    background: #c8e6c9;
+    color: #2e7d32;
+}
+
+.status-completed {
+    background: #e0f2f1;
+    color: #00695c;
+}
+
+.status-cancelled {
+    background: #ffcdd2;
+    color: #c62828;
+}
+
+.next-appointment-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.next-appointment-actions .btn {
+    border-radius: 14px;
+    font-weight: 700;
+    padding: 12px 25px;
+    transition: all 0.3s;
+}
+
+/* Dashboard Grids & Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.dashboard-card {
+    background: var(--dash-white);
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: var(--dash-shadow);
+    border: 1px solid rgba(212, 165, 116, 0.05);
+}
+
+.dashboard-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--dash-text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.appointment-item {
+    padding: 20px;
+    background: #fbfbfb;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.appointment-item:hover {
+    background: white;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border-color: var(--dash-primary);
+}
+
+.appointment-date {
+    display: flex;
+    flex-direction: column;
+    min-width: 130px;
+}
+
+.appointment-date strong {
+    font-size: 16px;
+    color: var(--dash-text);
+}
+
+.appointment-date span {
+    font-size: 14px;
+    color: var(--dash-text-light);
+}
+
+.appointment-details h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--dash-text);
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-top: 60px;
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.quick-action-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 24px;
+    box-shadow: var(--dash-shadow);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.4s;
+    border: 1px solid transparent;
+}
+
+.quick-action-card i {
+    font-size: 32px;
+    color: var(--dash-primary);
+}
+
+.quick-action-card span {
+    font-weight: 700;
+    color: var(--dash-text);
+    font-size: 14px;
+}
+
+.quick-action-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--dash-primary);
+    background: var(--dash-accent);
+}
+
+/* Recommendations Card Fix */
+.recommendation-card {
+    border-radius: 24px !important;
+    border: none !important;
+    box-shadow: var(--dash-shadow) !important;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .next-appointment-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .date-display {
+        width: 100%;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .dashboard-header .btn {
+        width: 100%;
+    }
+}

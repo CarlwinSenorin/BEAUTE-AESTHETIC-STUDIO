@@ -1,0 +1,12 @@
+# Admin Area Security
+# Protect admin directory
+
+# Prevent directory listing
+Options -Indexes
+
+# Additional security headers (if mod_headers is enabled)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
